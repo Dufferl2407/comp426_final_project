@@ -162,17 +162,17 @@
 			var button = document.createElement("button");
 			button.innerHTML = i;
 
-			var str_i;
-			var str_m;
+			var str_i = "";
+			var str_m = "";
 
 			if(i < 10) {str_i = "0" + i}
-			else {str_i = i;}
+			else {str_i = "" + i;}
 
 			if(month < 10) {str_m = "0" + month}
-			else {str_m = month;}
+			else {str_m = "" + month;}
 
-			button.id = str_i + str_m;
-			button.onclick = create_event(button.id);
+			button.id = str_m + str_i;
+			button.onclick = function(){create_event(this.id)};
 
 			item.appendChild(button);
 			list.appendChild(item);
